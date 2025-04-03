@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-auto-deployment
+  labels:
+    app: cloud-auto
+spec:
+  replicas: 2  # Number of replicas (adjust as needed)
+  selector:
+    matchLabels:
+      app: cloud-auto
+  template:
+    metadata:
+      labels:
+        app: cloud-auto
+    spec:
+      containers:
+      - name: cloud-auto-container
+        image: my-cloud-auto-app:latest  # Update with your Docker image name
+        ports:
+        - containerPort: 5000  # If using Flask/Streamlit, adjust accordingly
