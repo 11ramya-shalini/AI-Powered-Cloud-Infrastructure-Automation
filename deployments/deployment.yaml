@@ -16,6 +16,11 @@ spec:
     spec:
       containers:
       - name: cloud-auto-container
-        image: my-cloud-auto-app:latest  # Update with your Docker image name
+        image: ramyashalini/my-cloud-auto-app:latest  
         ports:
         - containerPort: 5000  # If using Flask/Streamlit, adjust accordingly
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "250m"

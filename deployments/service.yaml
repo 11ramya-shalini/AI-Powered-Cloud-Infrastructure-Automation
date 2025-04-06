@@ -6,7 +6,8 @@ spec:
   selector:
     app: cloud-auto
   ports:
-    - protocol: TCP
-      port: 80      # External port (ClusterIP, NodePort, LoadBalancer)
-      targetPort: 5000  # Match the containerPort in deployment.yaml
-  type: LoadBalancer  # Change to NodePort if testing locally
+    - protocol: TCP        
+      port: 80           # Internal Kubernetes service port
+      targetPort: 5000   # container port inside the pod
+      nodePort: 30007    # actual port exposed on llocalhost (30000-32767)
+  type: NodePort 
