@@ -32,8 +32,7 @@ This project automates cloud infrastructure management using **Kubernetes**. It 
 5. When load drops, pods scale down to save resources.
 
 ## 📦 Docker Image
-
-```bash
+```sh
 docker pull ramyashalini/my-cloud-auto-app:latest
 
 ## 🔥 HPA in Action
