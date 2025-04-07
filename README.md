@@ -21,7 +21,7 @@ This project automates cloud infrastructure management using **Kubernetes**. It 
 - **Metrics Server** – CPU/Memory Monitoring
 - **Horizontal Pod Autoscaler (HPA)** – Auto-scaling
 - **Bash Scripting** – Automation
-- **Prometheus & Grafana** – Monitoring Dashboards *(optional step)*
+- **Prometheus & Grafana** – Monitoring Dashboards 
 
 ## ⚙️ How It Works
 
@@ -50,6 +50,26 @@ NAME                                    CPU(cores)   MEMORY(bytes)
 cloud-auto-deployment-xxxx              254m         62Mi
 ...
 ```
+## Real-Time Log Monitoring with Loki & Fluent Bit
+
+Integrated real-time observability into the cloud infrastructure by setting up a log monitoring pipeline using:
+
+🔥 Fluent Bit
+
+Lightweight log forwarder deployed as DaemonSet
+
+📦 Loki
+
+Log aggregation system (Prometheus-style logs)
+
+📊 Grafana
+
+Visualization tool to query logs from Loki
+
+📁 Helm
+
+Used for installing and configuring the above tools
+
 
 ## 🛠 Setup Instructions
 1. Clone the repository:
