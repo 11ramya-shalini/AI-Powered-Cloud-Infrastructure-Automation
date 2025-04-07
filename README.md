@@ -34,6 +34,7 @@ This project automates cloud infrastructure management using **Kubernetes**. It 
 ## 📦 Docker Image
 ```sh
 docker pull ramyashalini/my-cloud-auto-app:latest
+```
 
 ## 🔥 HPA in Action
 
@@ -42,13 +43,13 @@ Example after triggering load via stress:
 kubectl get hpa
 NAME                    TARGETS       MINPODS   MAXPODS   REPLICAS
 cloud-auto-deployment   cpu: 93%/50%   2         5         5
-
+```
 ```sh
 kubectl top pods
 NAME                                    CPU(cores)   MEMORY(bytes)
 cloud-auto-deployment-xxxx              254m         62Mi
 ...
-
+```
 
 ## 🛠 Setup Instructions
 1. Clone the repository:
