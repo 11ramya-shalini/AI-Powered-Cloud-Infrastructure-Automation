@@ -114,6 +114,7 @@ Type of hotel[74]: <class 'dict'> | Value: {'name': 'CHATEAU DE BANGKOK', 'ratin
 ```
 ## Demos
 [Supply Dashboard](https://github.com/11ramya-shalini/AI-Powered-Cloud-Infrastructure-Automation/pull/1)
+[AI-Dashboard](https://github.com/11ramya-shalini/AI-Powered-Cloud-Infrastructure-Automation/pull/3)
 ## 🛠 Setup Instructions
 1. Clone the repository:
    ```sh
