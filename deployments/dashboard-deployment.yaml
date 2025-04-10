@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-dashboard
+  template:
+    metadata:
+      labels:
+        app: ai-dashboard
+    spec:
+      serviceAccountName: ai-dashboard-sa
+      containers:
+        - name: ai-dashboard
+          image: ramyashalini/ai-dashboard:latest
+          ports:
+            - containerPort: 5000

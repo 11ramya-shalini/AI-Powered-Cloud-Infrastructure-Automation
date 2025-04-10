@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🏨 Supply Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI'; padding: 40px; background: #f4f4f9; }
+        h2 { color: #007bff; }
+        .card {
+            background: white; border-radius: 10px; padding: 20px; margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #ratingsChart {
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h2>🧠 Hotel Recommendations (AI-Powered)</h2>
+
+    <h3>📊 Hotel Ratings Chart</h3>
+    <div id="ratingsChart"></div>
+
+    <script>
+        const hotelNames = {{ hotel_names | tojson }};
+        const hotelRatings = {{ hotel_ratings | tojson }};
+
+        const trace = {
+            x: hotelNames,
+            y: hotelRatings,
+            type: 'bar',
+            marker: { color: '#007bff' }
+        };
+
+        const layout = {
+            title: 'Top Hotel Ratings',
+            xaxis: { title: 'Hotel Name' },
+            yaxis: { title: 'Rating', range: [3, 5] }
+        };
+
+        Plotly.newPlot('ratingsChart', [trace], layout);
+    </script>
+
+    {% for hotel in hotels %}
+    <div class="card">
+        <h3>{{ hotel.name }}</h3>
+        <p><b>Rating:</b> {{ hotel.rating }}</p>
+        <p><b>City:</b> {{ hotel.city_name }}</p>
+        <p><b>Distance:</b> {{ hotel.distance }} km from center</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

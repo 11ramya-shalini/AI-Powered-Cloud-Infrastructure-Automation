@@ -1,9 +1,9 @@
 import requests
-
-def get_cpu_metrics(prometheus_url="http://localhost:9090"):
-    # query: CPUacross all pods
+PROMETHEUS_URL = "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090"
+def get_cpu_metrics():
+    # query: CPU across all pods
     query = 'sum(rate(container_cpu_usage_seconds_total[1m])) by (pod)'
-    response = requests.get(f"{prometheus_url}/api/v1/query", params={'query': query})
+    response = requests.get(f"{PROMETHEUS_URL}/api/v1/query", params={'query': query})
 
     if response.status_code == 200:
         results = response.json()['data']['result']
