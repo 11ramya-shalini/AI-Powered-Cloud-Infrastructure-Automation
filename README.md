@@ -112,7 +112,8 @@ Type of hotel[72]: <class 'dict'> | Value: {'name': 'ARIYASOMVILLA AND SPA', 'ra
 Type of hotel[73]: <class 'dict'> | Value: {'name': 'H-RESIDENCE SATHON', 'rating': 4.7, 'price': 138, 'city_name': 'Bangkok', 'distance': 5.48}
 Type of hotel[74]: <class 'dict'> | Value: {'name': 'CHATEAU DE BANGKOK', 'rating': 3.5, 'price': 134, 'city_name': 'Bangkok', 'distance': 5.5}
 ```
-
+## Demos
+[Supply Dashboard](https://github.com/11ramya-shalini/AI-Powered-Cloud-Infrastructure-Automation/pull/1)
 ## 🛠 Setup Instructions
 1. Clone the repository:
    ```sh
